@@ -1,0 +1,132 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171717">
+  <meta name="description" content="Waffle Tech offline-first POS and repair management">
+  <title>Waffle Tech POS</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Waffle Tech home">
+      <span class="brand-icon">W</span>
+      <span>WAFFLE <b>TECH</b><small>POS & REPAIR CENTER</small></span>
+    </a>
+    <span id="connection" class="connection">
+      <span class="status-dot"></span> Checking...
+    </span>
+  </header>
+
+  <main id="app" class="main-content">
+    <section class="welcome">
+      <p class="eyebrow">BUSINESS OVERVIEW</p>
+      <h1>Dashboard</h1>
+      <p class="muted" id="today"></p>
+    </section>
+
+    <section class="stats-grid" aria-label="Business summary">
+      <article class="stat-card">
+        <span class="stat-icon yellow">₱</span>
+        <p>Today's sales</p>
+        <h2 id="total-sales">₱0.00</h2>
+        <small>Completed sales only</small>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon brown">▤</span>
+        <p>Transactions</p>
+        <h2 id="transaction-count">0</h2>
+        <small>Today's transactions</small>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon dark">⚙</span>
+        <p>Active repairs</p>
+        <h2 id="active-repairs">0</h2>
+        <small>Jobs not yet completed</small>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon green">✓</span>
+        <p>Completed repairs</p>
+        <h2 id="completed-repairs">0</h2>
+        <small>Completed today</small>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">GET STARTED</p>
+          <h2>Quick actions</h2>
+        </div>
+      </div>
+      <div class="actions-grid">
+        <button class="action-button primary" data-page="sales">
+          <span>＋</span> New Sale
+        </button>
+        <button class="action-button" data-page="repairs">
+          <span>⚙</span> New Repair
+        </button>
+        <button class="action-button" data-page="inventory">
+          <span>▦</span> Add Product
+        </button>
+        <button class="action-button" data-page="customers">
+          <span>♙</span> Add Customer
+        </button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">BUSINESS ACTIVITY</p>
+          <h2>Recent transactions</h2>
+        </div>
+        <button class="text-button" data-page="transactions">View all</button>
+      </div>
+      <div id="recent-transactions" class="empty-state">
+        <span class="empty-icon">▤</span>
+        <strong>No transactions yet</strong>
+        <p>Your completed sales will appear here.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">SERVICE CENTER</p>
+          <h2>Recent repair jobs</h2>
+        </div>
+        <button class="text-button" data-page="repairs">View all</button>
+      </div>
+      <div id="recent-repairs" class="empty-state">
+        <span class="empty-icon">⚙</span>
+        <strong>No repair jobs yet</strong>
+        <p>New customer repair jobs will appear here.</p>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <button class="nav-item active" data-page="dashboard">
+      <span>⌂</span><small>Home</small>
+    </button>
+    <button class="nav-item" data-page="sales">
+      <span>₱</span><small>Sales</small>
+    </button>
+    <button class="nav-item" data-page="repairs">
+      <span>⚙</span><small>Repairs</small>
+    </button>
+    <button class="nav-item" data-page="inventory">
+      <span>▦</span><small>Inventory</small>
+    </button>
+    <button class="nav-item" data-page="reports">
+      <span>▥</span><small>Reports</small>
+    </button>
+  </nav>
+
+  <script type="module" src="/app.js"></script>
+</body>
+        </html>
+  
