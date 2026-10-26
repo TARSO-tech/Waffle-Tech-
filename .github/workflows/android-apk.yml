@@ -37,9 +37,7 @@ jobs:
         uses: android-actions/setup-android@v3
         with:
           accept-android-sdk-licenses: true
-
-      - name: Install Android SDK packages
-        run: sdkmanager --install "platforms;android-36" "build-tools;36.0.0" "platform-tools"
+          packages: 'platform-tools platforms;android-36 build-tools;36.0.0'
 
       - name: Install Node.js dependencies
         run: npm ci
