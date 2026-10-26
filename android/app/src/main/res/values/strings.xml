@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Waffle Tech</string>
+    <string name="title_activity_main">Waffle Tech</string>
+    <string name="package_name">com.waffletech.pos</string>
+    <string name="custom_url_scheme">com.waffletech.pos</string>
+</resources>

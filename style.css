@@ -11,6 +11,8 @@
   --brown: #8b5e3c;
   --gray: #6b7280;
   --border: #e9e9e9;
+  --accent-soft: #fff2cd;
+  --accent-border: #f3dfaa;
 }
 
 * { box-sizing: border-box; }
@@ -79,11 +81,49 @@ button:focus-visible, a:focus-visible {
   gap: 6px;
 }
 
+.topbar-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mode-toggle {
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--black);
+  border-radius: 8px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.mode-toggle:hover { background: #383838; }
+
 .status-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: var(--gray);
+}
+
+body.mode-tech {
+  --yellow: #2563eb;
+  --brown: #1d4ed8;
+  --accent-soft: #eaf1ff;
+  --accent-border: #cbdcff;
+}
+
+.mode-tech .brand-icon { background: #2563eb; color: var(--white); }
+.mode-tech .mode-toggle { border-color: #1d4ed8; background: #1d4ed8; }
+.mode-tech .mode-toggle:hover { background: #1e40af; }
+
+@media (max-width: 420px) {
+  .topbar { padding: 0 12px; }
+  .topbar-status { gap: 8px; }
+  .connection { font-size: 0; }
+  .connection .status-dot { width: 9px; height: 9px; }
 }
 
 .main-content {
@@ -145,10 +185,12 @@ h2 {
   font-weight: 800;
 }
 
-.yellow { background: #fff0c5; }
+.yellow { background: var(--accent-soft); }
 .brown { background: #f3e5db; color: var(--brown); }
 .dark { background: #ececec; }
 .green { background: #dff4e5; color: #187a42; }
+.blue { background: #dbeafe; color: #1d4ed8; }
+.blue-light { background: #eff6ff; color: #2563eb; }
 
 .stat-card p {
   color: var(--gray);
@@ -238,7 +280,7 @@ h2 {
   height: 42px;
   display: grid;
   place-items: center;
-  background: #fff4d6;
+  background: var(--accent-soft);
   border-radius: 14px;
   font-size: 22px;
 }
@@ -282,7 +324,7 @@ h2 {
 .nav-item small { font-size: 10px; font-weight: 700; }
 
 .nav-item.active {
-  background: #fff2cd;
+  background: var(--accent-soft);
   color: var(--black);
 }
 
@@ -318,14 +360,14 @@ h2 {
   width: 30px;
   height: 30px;
   border-radius: 9px;
-  background: #fff2cd;
+  background: var(--accent-soft);
   font-size: 22px;
 }
 
 .notice {
   padding: 14px;
-  background: #fff8e7;
-  border: 1px solid #f3dfaa;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
   border-radius: 12px;
   margin-bottom: 15px;
 }
