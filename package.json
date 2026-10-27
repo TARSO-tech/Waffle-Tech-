@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=./",
+    "copy:sqlite-wasm": "mkdir -p public/assets && cp node_modules/sql.js/dist/sql-wasm.wasm public/assets/sql-wasm.wasm",
+    "build": "npm run copy:sqlite-wasm && vite build --base=./",
+    "test": "node --test",
     "android:add": "cap add android",
     "android:sync": "npm run build && cap sync android",
     "android:open": "cap open android"
@@ -15,7 +17,10 @@
     "vite": "^6.0.0"
   },
   "dependencies": {
+    "@capacitor-community/sqlite": "^8.1.1",
     "@capacitor/android": "^8.5.3",
-    "@capacitor/core": "^8.5.3"
+    "@capacitor/core": "^8.5.3",
+    "jeep-sqlite": "^2.8.0",
+    "sql.js": "^1.15.2"
   }
 }
